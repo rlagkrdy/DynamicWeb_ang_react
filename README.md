@@ -6,7 +6,7 @@ Flex-layout 으로 Angular 와 React 로 구현한 프로젝트 입니다.
 
 ## [Angular Demo](http://221.149.240.50:3000)
 
-## [React Demo](http://221.149.240.50:3000)
+## [React Demo 예정중...](http://221.149.240.50:3000)
 
 # 구현예정 :
 
