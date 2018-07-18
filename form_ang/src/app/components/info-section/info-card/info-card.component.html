@@ -1,0 +1,13 @@
+<section class="promotion-section">
+  <div class="container">
+    <ul class="promo-list">
+      <li *ngFor="let item of infoList">
+        <a href="#">
+          <img [src]="item.img" alt="">
+          <h3>{{item.name}}</h3>
+          <p>{{item.text}}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

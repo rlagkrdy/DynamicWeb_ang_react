@@ -1,0 +1,56 @@
+.contact-section {
+  margin-top: 109px;
+  .form-box {
+    width: 100%;
+    .form {
+      input {
+        padding-bottom: 13px;
+        margin-bottom: 38px;
+      }
+    }
+    .fieldset {
+      .blind {
+        display: none;
+      }
+      textarea {
+        height: 162px;
+        resize: none;
+      }
+    }
+    .send-btn {
+      margin-top: 36px;
+      text-align: right;
+      button {
+        padding: 15px;
+        margin: 0;
+        border: 0;
+        font-size: 12px;
+        color: #fff;
+        background: #3f51b5;
+        font-family: 'Montserrat';
+        cursor: pointer;
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .contact-section {
+    margin-top: 176px;
+    .fieldset {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      .form,
+      .textarea {
+        width: 48%;
+      }
+    }
+  }
+}
+@media (min-width: 1132px) {
+  .contact-section {
+    .form-box {
+      width: 75%;
+    }
+  }
+}

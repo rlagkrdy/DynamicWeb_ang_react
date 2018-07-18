@@ -1,0 +1,16 @@
+<section class="blog-section">
+  <div class="container flex-space">
+    <h2 class="sec-tit" id="blog_section">BLOG</h2>
+    <ul class="blog-list">
+      <li *ngFor="let item of blogList">
+        <a href="">
+          <img [src]="item.img" alt="">
+        </a>
+        <time>{{item.timeText}}}</time>
+        <a href="">
+          <h3>{{item.text}}</h3>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

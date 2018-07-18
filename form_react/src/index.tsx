@@ -1,6 +1,6 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { Layout } from './layout/layout/layout';
+import './index.scss';
 
-ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
-    document.getElementById('example')
-);
+ReactDOM.render(<Layout />, document.getElementById('example'));

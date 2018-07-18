@@ -1,0 +1,40 @@
+.display-section {
+    display: flex;
+    margin-top: 59px;
+}
+.container {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+}
+.sec-tit {
+    margin-bottom: 30px;
+}
+
+@media all and (min-width: 768px) {
+    .display-section {
+        margin-top: 56px;
+    }
+}
+
+@media all and (min-width: 1132px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .desc {
+        position: relative;
+        padding-left: 20px;
+    }
+    .desc:before {
+        display: block;
+        position: absolute;
+        top: 9px;
+        left: 0;
+        width: 2px;
+        height: 44px;
+        background: #e0e0e0;
+        content: '';
+    }
+}

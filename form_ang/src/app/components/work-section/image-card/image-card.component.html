@@ -1,0 +1,11 @@
+<ul class="work-list">
+  <li *ngFor="let item of imageList">
+    <a href="">
+      <div class="info">
+        <h3>{{item.title}}</h3>
+        <span>{{item.subTitle}}</span>
+      </div>
+      <img [src]="item.img" alt="">
+    </a>
+  </li>
+</ul>

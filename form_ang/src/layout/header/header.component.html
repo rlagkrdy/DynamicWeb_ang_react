@@ -1,0 +1,17 @@
+<div class="header" id="home_section">
+  <h1 class="logo">
+    <a href="">INDIGO</a>
+  </h1>
+  <nav>
+    <ul class="gnb" #menuList>
+      <li *ngFor="let items of menuLists">
+        <a (click)="scrollTos(items.section)">{{items.name}}</a>
+      </li>
+    </ul>
+  </nav>
+  <span class="menu-toggle-btn" (click)="slideToggle(menuList)">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+</div>

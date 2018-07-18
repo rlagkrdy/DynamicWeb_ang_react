@@ -1,0 +1,14 @@
+.m-divider {
+    width: 20px;
+    margin: 0 auto;
+    margin-top: 77px;
+    margin-bottom: 77px;
+    background: #3f51b5;
+}
+
+@media (min-width: 768px) {
+    .m-divider {
+        margin-top: 124px;
+        margin-bottom: 124px;
+    }
+}

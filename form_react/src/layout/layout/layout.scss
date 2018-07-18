@@ -1,0 +1,36 @@
+.container {
+    width: 90%;
+    max-width: 1132px;
+    margin: 0 auto;
+}
+
+.desc {
+    font-family: 'PT Serif';
+    color: #616161;
+    line-height: 1.9;
+}
+
+.sec-tit {
+    font-size: 42px;
+    color: #3f51b5;
+    font-weight: normal;
+    margin-bottom: 47px;
+    text-align: center;
+    @media all and (min-width: 768px) {
+        margin-bottom: 76px;
+    }
+    @media all and (min-width: 1132px) {
+        .sec-tit {
+            text-align: left;
+        }
+    }
+}
+
+.flex-space {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @media all and (min-width: 1132px) {
+        flex-direction: row;
+    }
+}
