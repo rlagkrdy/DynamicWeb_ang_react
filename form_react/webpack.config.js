@@ -33,20 +33,16 @@ module.exports = {
             // 웹페이지에 삽입할 수 있도록 로더를 정한다.
             {
                 test: /\.css$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'typings-for-css-modules-loader',
-                        options: {
-                            modules: true,
-                            namedExport: true
-                        }
-                    }
-                ]
+                use: ['style-loader', 'css-loader', 'postcss-loader']
             },
             {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader'
+                ]
             }
         ]
     },

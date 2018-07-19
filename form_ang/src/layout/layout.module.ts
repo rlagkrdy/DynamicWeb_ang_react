@@ -5,6 +5,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { FooterComponent } from './footer/footer.component';
 import { ComponentsModule } from '../app/components/components.module';
 import { Model } from '../model/model';
+import { SliderSectionComponent } from '../app/components/slider-section/slider-section.component';
 
 @NgModule({
   declarations: [HeaderComponent, LayoutComponent, FooterComponent],

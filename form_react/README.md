@@ -5,6 +5,7 @@
 -   Webpack
 -   Jest
 -   Tslint
+-   autoprefixer, postcss
 
 ## Licensing
 

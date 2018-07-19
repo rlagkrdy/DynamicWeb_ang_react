@@ -23,7 +23,8 @@ import { SliderSectionComponent } from './slider-section/slider-section.componen
     InfoSectionComponent,
     WorkSectionComponent,
     BlogSectionComponent,
-    ContactSectionComponent
+    ContactSectionComponent,
+    SliderSectionComponent
   ]
 })
 export class ComponentsModule {}

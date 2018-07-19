@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
+    "browserslist": [
+        "> 1%",
+        "ie > 9"
+    ],
     "scripts": {
         "serve": "npm run watch | npm run start",
         "watch": "webpack -w",
@@ -29,10 +33,15 @@
         "@types/react-router-dom": "^4.2.7",
         "@types/react-test-renderer": "^16.0.1",
         "@types/redux-actions": "^2.3.0",
+        "autoprefixer": "^9.0.0",
         "awesome-typescript-loader": "^5.2.0",
         "css-loader": "^0.28.11",
         "jest": "^23.4.1",
         "node-sass": "^4.9.0",
+        "postcss": "^7.0.0",
+        "postcss-loader": "^2.1.6",
+        "postcss-sass": "^0.3.2",
+        "postcss-scss": "^2.0.0",
         "react-test-renderer": "^16.4.1",
         "sass-loader": "^7.0.3",
         "source-map-loader": "^0.2.3",
