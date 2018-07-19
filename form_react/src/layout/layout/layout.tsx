@@ -5,8 +5,8 @@ import { ImgSlider } from '../../components/Imgslider/imgSlider';
 import { Info } from '../../components/info/info';
 import { Work } from '../../components/work/work';
 import { Blog } from '../../components/blog/blog';
-import { Concat } from '../../components/concat/concat';
 import './layout.scss';
+import { Contact } from '../../components/contact/contact';
 
 export class Layout extends React.Component {
     menuLists: MenuList[] = [
@@ -49,7 +49,7 @@ export class Layout extends React.Component {
                     <Info />
                     <Work />
                     <Blog />
-                    <Concat />
+                    <Contact />
                 </section>
                 <Footer />
             </div>

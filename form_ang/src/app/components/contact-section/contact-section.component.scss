@@ -6,6 +6,21 @@
       input {
         padding-bottom: 13px;
         margin-bottom: 38px;
+        color: black;
+        &.ng-valid {
+          border-bottom: 1px solid #11c26d;
+          &:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(17, 194, 109, 0.25);
+          }
+        }
+        &.ng-invalid.ng-touched {
+          border-bottom: 1px solid #ff4c52;
+          &:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(255, 76, 82, 0.25);
+          }
+        }
       }
     }
     .fieldset {
@@ -15,6 +30,21 @@
       textarea {
         height: 162px;
         resize: none;
+        color: black;
+        &.ng-valid {
+          border-bottom: 1px solid #11c26d;
+          &:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(17, 194, 109, 0.25);
+          }
+        }
+        &.ng-invalid.ng-touched {
+          border-bottom: 1px solid #ff4c52;
+          &:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(255, 76, 82, 0.25);
+          }
+        }
       }
     }
     .send-btn {
@@ -29,6 +59,9 @@
         background: #3f51b5;
         font-family: 'Montserrat';
         cursor: pointer;
+        &:disabled {
+          background: #e0e0e0;
+        }
       }
     }
   }

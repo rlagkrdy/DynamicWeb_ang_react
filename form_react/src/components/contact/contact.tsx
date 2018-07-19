@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './Concat.scss';
 
-export class Concat extends React.Component {
+export class Contact extends React.Component {
     render() {
         return (
             <div>

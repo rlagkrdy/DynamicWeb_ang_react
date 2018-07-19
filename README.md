@@ -12,7 +12,7 @@ Flex-layout 으로 Angular 와 React 로 구현한 프로젝트 입니다.
 
 -   반응형 랜딩 템플릿(완료)
 -   autoprefixer 구현 (완료)
--   Concat form Validation(예정...)
+-   Contact form Validation(예정...)
 
 # Server Spec
 

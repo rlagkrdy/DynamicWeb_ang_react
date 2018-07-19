@@ -1,4 +1,4 @@
-import * as React from 'React';
+import * as React from 'react';
 import './info.scss';
 import { InfoCardType, InfoCard } from './card/infoCard';
 

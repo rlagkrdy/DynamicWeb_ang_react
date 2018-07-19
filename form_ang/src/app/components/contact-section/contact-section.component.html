@@ -1,25 +1,52 @@
 <section class="contact-section">
   <div class="container flex-space">
-    <h2 class="sec-tit" id="contact_section">CONTACT</h2>
+    <h2 class="sec-tit" id="contact_section">CONTACT
+      <br>(모델 검증)</h2>
     <div class="form-box">
-      <form action="" method="">
+      <form [formGroup]='form' (ngSubmit)="formSubmit($event)">
         <div class="fieldset cfixed">
           <legend class="blind">CONTACT US</legend>
           <div class="form">
             <label for="name" class="blind">name</label>
-            <input type="text" id="name" placeholder="Name">
+            <input formControlName='name' type="text" id="name" placeholder="Name(한글만 가능)">
             <label for="phone" class="blind">phone</label>
-            <input type="tel" id="phone" placeholder="Phone">
+            <input formControlName='phone' type="tel" id="phone" placeholder="Phone(Ex: 01000000000)">
             <label for="email" class="blind">email</label>
-            <input type="email" id="email" placeholder="Email Address">
+            <input formControlName='email' type="email" id="email" placeholder="Email Address(Ex: xxx@xx.xx)">
           </div>
           <div class="textarea">
             <label for="message" class="blind">message</label>
-            <textarea name="message" id="message" placeholder="Message"></textarea>
+            <textarea formControlName='message' name="message" id="message" placeholder="Message"></textarea>
           </div>
         </div>
         <div class="send-btn">
-          <button>SEND MASSAGE</button>
+          <button [disabled]="!form.valid">SEND MASSAGE</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container flex-space">
+    <h2 class="sec-tit" id="contact_section">CONTACT
+      <br>(내장 검증)</h2>
+    <div class="form-box">
+      <form #form2="ngForm" (ngSubmit)="formSubmit2($event)">
+        <div class="fieldset cfixed">
+          <legend class="blind">CONTACT US</legend>
+          <div class="form">
+            <label for="name" class="blind">name</label>
+            <input type="text" id="name" placeholder="Name(한글만 가능)" name="name" [(ngModel)]="name" required [pattern]="nameReg">
+            <label for="phone" class="blind">phone</label>
+            <input type="tel" id="phone" placeholder="Phone(Ex: 01000000000)" name="phone" [(ngModel)]="phone" required [pattern]="phoneReg">
+            <label for="email" class="blind">email</label>
+            <input type="email" id="email" placeholder="Email Address(Ex: xxx@xx.xx)" name="email" [(ngModel)]="email" required [pattern]='emailReg'>
+          </div>
+          <div class="textarea">
+            <label for="message" class="blind">message</label>
+            <textarea name="message" id="message" placeholder="Message" name="message" [(ngModel)]="message" required></textarea>
+          </div>
+        </div>
+        <div class="send-btn">
+          <button [disabled]="!form2.valid">SEND MASSAGE</button>
         </div>
       </form>
     </div>

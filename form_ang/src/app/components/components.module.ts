@@ -7,9 +7,10 @@ import { ImageCardComponent } from './work-section/image-card/image-card.compone
 import { BlogSectionComponent } from './blog-section/blog-section.component';
 import { ContactSectionComponent } from './contact-section/contact-section.component';
 import { SliderSectionComponent } from './slider-section/slider-section.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   declarations: [
     InfoSectionComponent,
     InfoCardComponent,
