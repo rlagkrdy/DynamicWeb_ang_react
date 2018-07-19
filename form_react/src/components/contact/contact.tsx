@@ -1,7 +1,24 @@
 import * as React from 'react';
-import './Concat.scss';
+import './Contact.scss';
 
-export class Contact extends React.Component {
+export interface ContactState {
+    name: string;
+    phone: string;
+    email: string;
+    message: string;
+}
+
+export class Contact extends React.Component<{}, ContactState> {
+    constructor(props?: {}) {
+        super(props);
+        this.state = {
+            name: '',
+            phone: '',
+            email: '',
+            message: ''
+        };
+    }
+
     render() {
         return (
             <div>
