@@ -6,13 +6,14 @@ Flex-layout 으로 Angular 와 React 로 구현한 프로젝트 입니다.
 
 ## [Angular Demo](http://221.149.240.50:3000)
 
-## [React Demo 예정중...](http://221.149.240.50:3000)
+## [React Demo](http://221.149.240.50:3001)
 
 # 구현예정 :
 
 -   반응형 랜딩 템플릿(완료)
 -   autoprefixer 구현 (완료)
--   Contact form Validation(ang 완료, react 예정...)
+-   Contact form Validation(Angular 완료 &&, React with Redux 완료)
+-   Contact Form Validation Unit Test(Angular 완료 && React 예정)
 
 # Server Spec
 

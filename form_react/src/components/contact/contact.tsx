@@ -1,23 +1,56 @@
 import * as React from 'react';
 import './Contact.scss';
+import { connect } from 'react-redux';
+import { fetchFromActionCreator } from '../../model/form';
+import { FormMaker, FormInput, FormText } from './Form';
 
-export interface ContactState {
-    name: string;
-    phone: string;
-    email: string;
-    message: string;
+export interface FormValid {
+    value: any;
+    valid: boolean;
+    required: boolean;
+    pattern?: RegExp;
 }
 
-export class Contact extends React.Component<{}, ContactState> {
-    constructor(props?: {}) {
-        super(props);
-        this.state = {
-            name: '',
-            phone: '',
-            email: '',
-            message: ''
-        };
-    }
+export interface ContactState {
+    name: FormValid;
+    phone: FormValid;
+    email: FormValid;
+    message: FormValid;
+}
+export interface ContactProps {
+    fetchForm: any;
+    formObj: any;
+    formValid: boolean;
+}
+const FormInputComponent = FormMaker(FormInput);
+const FormTextComponent = FormMaker(FormText);
+class Contact extends React.Component<ContactProps> {
+    state = {
+        form: this.props.formObj,
+        valid: this.props.formValid
+    };
+
+    fetchForm = (data: any) => {
+        this.props.fetchForm(data);
+
+        setTimeout(() => {
+            this.setState({
+                form: this.props.formObj,
+                valid: this.props.formValid
+            });
+        }, 0);
+    };
+
+    submit = (e: React.FormEvent<any>) => {
+        const valueArr = this.state.form.map(item => {
+            const obj = {};
+            obj[item.name] = item.value;
+            return obj;
+        });
+        const obj: Object = Object.assign({}, ...valueArr);
+        alert(JSON.stringify(obj));
+        e.preventDefault();
+    };
 
     render() {
         return (
@@ -28,59 +61,35 @@ export class Contact extends React.Component<{}, ContactState> {
                             CONTACT
                         </h2>
                         <div className="form-box">
-                            <form action="" method="">
+                            <form id="contactForm" onSubmit={this.submit}>
                                 <div className="fieldset cfixed">
                                     <legend className="blind">
                                         CONTACT US
                                     </legend>
                                     <div className="form">
-                                        <label htmlFor="name" className="blind">
-                                            name
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            placeholder="Name"
-                                        />
-                                        <label
-                                            htmlFor="phone"
-                                            className="blind"
-                                        >
-                                            phone
-                                        </label>
-                                        <input
-                                            type="tel"
-                                            id="phone"
-                                            placeholder="Phone"
-                                        />
-                                        <label
-                                            htmlFor="email"
-                                            className="blind"
-                                        >
-                                            email
-                                        </label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            placeholder="Email Address"
-                                        />
+                                        {this.state.form.map(item => {
+                                            if (item.id === 'message') {
+                                                return false;
+                                            }
+                                            return (
+                                                <FormInputComponent
+                                                    fetchForm={this.fetchForm}
+                                                    {...item}
+                                                />
+                                            );
+                                        })}
                                     </div>
                                     <div className="textarea">
-                                        <label
-                                            htmlFor="message"
-                                            className="blind"
-                                        >
-                                            message
-                                        </label>
-                                        <textarea
-                                            name="message"
-                                            id="message"
-                                            placeholder="Message"
+                                        <FormTextComponent
+                                            fetchForm={this.fetchForm}
+                                            {...this.state.form[3]}
                                         />
                                     </div>
                                 </div>
                                 <div className="send-btn">
-                                    <button>SEND MASSAGE</button>
+                                    <button disabled={!this.state.valid}>
+                                        SEND MASSAGE
+                                    </button>
                                 </div>
                             </form>
                         </div>
@@ -90,3 +99,15 @@ export class Contact extends React.Component<{}, ContactState> {
         );
     }
 }
+
+export default connect(
+    ({ formReducer }: any) => {
+        return {
+            formObj: formReducer.formObj,
+            formValid: formReducer.formValid
+        };
+    },
+    {
+        fetchForm: fetchFromActionCreator
+    }
+)(Contact);

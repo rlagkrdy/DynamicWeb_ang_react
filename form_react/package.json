@@ -10,6 +10,7 @@
     "scripts": {
         "serve": "npm run watch | npm run start",
         "watch": "webpack -w",
+        "build": "webpack -p",
         "start": "webpack-dev-server",
         "test": "jest --watchAll"
     },

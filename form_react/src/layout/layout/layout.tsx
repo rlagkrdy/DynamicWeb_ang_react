@@ -6,7 +6,7 @@ import { Info } from '../../components/info/info';
 import { Work } from '../../components/work/work';
 import { Blog } from '../../components/blog/blog';
 import './layout.scss';
-import { Contact } from '../../components/contact/contact';
+import Contact from '../../components/contact/contact';
 
 export class Layout extends React.Component {
     menuLists: MenuList[] = [
